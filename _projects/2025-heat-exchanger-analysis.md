@@ -6,203 +6,273 @@ technologies: [Thermodynamics, Heat Transfer, MATLAB, Data Analysis]
 image: /assets/images/temperature-profiles.png
 ---
 
-## Project Overview
+# Heat Exchanger Performance Analysis: Parallel vs Counter Flow
 
-This project presents a comprehensive thermodynamic analysis comparing the performance of **parallel flow** and **counter flow** heat exchangers. Through experimental data collection and theoretical analysis, I quantified the significant performance advantages of counter flow configurations, demonstrating **45% higher cold stream temperature rise** and **8.9% better effectiveness** compared to parallel flow arrangements.
-
----
-
-## System Configurations
-
-### Counter Flow Heat Exchanger
-
-<div class="diagram-container" style="margin: 2em 0; text-align: center;">
-  <img src="{{ '/assets/images/counter-flow-diagram.png' | relative_url }}" alt="Counter Flow Heat Exchanger System Diagram" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: white;">
-  <p style="margin-top: 0.5em; font-style: italic; color: #666;">Figure 1: Counter flow configuration showing hot and cold streams flowing in opposite directions</p>
-</div>
-
-**Operating Conditions:**
-- Hot fluid inlet (State 1): $T_1 = 45°C$
-- Hot fluid outlet (State 2): $T_2 = 23.7°C$
-- Cold fluid inlet (State 3): $T_3 = 11.4°C$
-- Cold fluid outlet (State 4): $T_4 = 28.2°C$
-
-### Parallel Flow Heat Exchanger
-
-<div class="diagram-container" style="margin: 2em 0; text-align: center;">
-  <img src="{{ '/assets/images/parallel-flow-diagram.png' | relative_url }}" alt="Parallel Flow Heat Exchanger System Diagram" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: white;">
-  <p style="margin-top: 0.5em; font-style: italic; color: #666;">Figure 2: Parallel flow configuration with hot and cold streams flowing in the same direction</p>
-</div>
-
-**Operating Conditions:**
-- Hot fluid inlet (State 1): $T_1 = 45°C$
-- Hot fluid outlet (State 2): $T_2 = 22.9°C$
-- Cold fluid inlet (State 3): $T_3 = 7.0°C$
-- Cold fluid outlet (State 4): $T_4 = 18.6°C$
+**ENGRD 2210 - Thermodynamics Portfolio Project**
+*James Xiao*
+*Cornell University, Fall 2025*
 
 ---
 
-## Temperature Profile Comparison
+## Executive Summary
 
-<div class="diagram-container" style="margin: 2em 0; text-align: center;">
-  <img src="{{ '/assets/images/temperature-profiles.png' | relative_url }}" alt="Temperature Profiles for Parallel and Counter Flow" style="max-width: 100%; height: auto; border: 1px solid #ddd; padding: 10px; background: white;">
-  <p style="margin-top: 0.5em; font-style: italic; color: #666;">Figure 3: Temperature profiles along normalized heat exchanger length for both configurations</p>
-</div>
-
-The temperature profiles reveal the fundamental difference between the two configurations:
-
-- **Counter flow**: Maintains a more uniform temperature difference (ΔT) throughout the exchanger length, maximizing heat transfer efficiency
-- **Parallel flow**: Shows rapidly decreasing ΔT as both fluids approach thermal equilibrium
+This analysis compares heat exchanger performance in parallel and counter flow configurations. Experimental results demonstrate that counter flow operation achieves **45% greater temperature rise** in the cold stream (16.8°C vs 11.6°C) and **8.9% higher effectiveness** (63.4% vs 58.2%) compared to parallel flow under similar conditions.
 
 ---
 
-## Theoretical Analysis
+## 1. Introduction
 
-### Governing Equations
+### Heat Exchanger Fundamentals
 
-**Mass Balance (Steady-State):**
+A heat exchanger transfers thermal energy between two fluids at different temperatures without mixing them. This device is critical in applications including automotive cooling systems, power plant condensers, HVAC systems, and chemical processing.
 
-$$\dot{m}_{in,hot} = \dot{m}_{out,hot} = \dot{m}_h$$
-
-$$\dot{m}_{in,cold} = \dot{m}_{out,cold} = \dot{m}_c$$
-
-**Energy Balance (1st Law of Thermodynamics):**
-
-For the hot stream:
-$$\dot{Q}_{hot} = \dot{m}_h c_p (T_1 - T_2)$$
-
-For the cold stream:
-$$\dot{Q}_{cold} = \dot{m}_c c_p (T_4 - T_3)$$
-
-Under steady-state conditions with negligible heat loss:
-$$\dot{Q}_{hot} = \dot{Q}_{cold} = \dot{Q}$$
-
-**Heat Exchanger Effectiveness:**
-
-$$\varepsilon = \frac{\dot{Q}_{actual}}{\dot{Q}_{max}}$$
-
-where $\dot{Q}_{max}$ is the maximum possible heat transfer rate, limited by the fluid with minimum heat capacity rate.
-
-**Entropy Generation (2nd Law Analysis):**
-
-$$\dot{S}_{gen} = \left[\dot{m}_h (s_2 - s_1) + \dot{m}_c (s_4 - s_3)\right]$$
-
-For incompressible liquids with constant specific heat:
-
-$$\dot{S}_{gen} = \dot{m}_h c_p \ln\left(\frac{T_2}{T_1}\right) + \dot{m}_c c_p \ln\left(\frac{T_4}{T_3}\right)$$
+The heat exchanger studied consists of two independent flow circuits (hot and cold) with four ports. It can operate in two configurations:
+- **Parallel Flow**: Both fluids flow in the same direction
+- **Counter Flow**: Fluids flow in opposite directions
 
 ---
 
-## Experimental Results
+## 2. Experimental Setup
 
-### Mass Flow Rate Determination
+### Test Conditions
 
-Using the energy balance equation, I calculated the mass flow rate ratios:
+#### Parallel Flow Configuration
 
-**Counter Flow:**
-$$\frac{\dot{m}_h}{\dot{m}_c} = \frac{T_4 - T_3}{T_1 - T_2} = \frac{28.2 - 11.4}{45 - 23.7} = \frac{16.8}{21.3} = 0.789$$
+| Parameter | Value |
+|-----------|-------|
+| Hot inlet (T₁) | 45.0°C |
+| Hot outlet (T₂) | 22.9°C |
+| Cold inlet (T₃) | 7.0°C |
+| Cold outlet (T₄) | 18.6°C |
+| Flow condition | ṁ_cold > ṁ_hot |
 
-**Parallel Flow:**
-$$\frac{\dot{m}_h}{\dot{m}_c} = \frac{T_4 - T_3}{T_1 - T_2} = \frac{18.6 - 7.0}{45 - 22.9} = \frac{11.6}{22.1} = 0.525$$
+#### Counter Flow Configuration
 
-The flow rate ratio is approximately **1.9:1** for counter flow and **1.27:1** for parallel flow, assuming equal flow rates on each side for their respective configurations.
+| Parameter | Value |
+|-----------|-------|
+| Hot inlet (T₁) | 45.0°C |
+| Hot outlet (T₂) | 23.7°C |
+| Cold inlet (T₃) | 11.4°C |
+| Cold outlet (T₄) | 28.2°C |
+| Flow condition | ṁ_cold > ṁ_hot |
 
-### Performance Comparison
+---
 
-| Metric | Counter Flow | Parallel Flow | Improvement |
-|--------|--------------|---------------|-------------|
-| Hot fluid ΔT | 21.3°C | 22.1°C | -3.6% |
-| Cold fluid ΔT | 16.8°C | 11.6°C | **+44.8%** |
-| Effectiveness (ε) | 63.4% | 58.2% | **+8.9%** |
-| Entropy generation | 0.421 W/K | 0.687 W/K | **-38.8%** |
+## 3. System Diagrams
 
-<div style="background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 1em; margin: 1.5em 0;">
-  <strong>Key Finding:</strong> The counter flow configuration achieved a <strong>45% increase</strong> in cold stream temperature rise compared to parallel flow, demonstrating significantly superior heat transfer performance.
+### Parallel Flow Configuration
+
+<div class="diagram-container">
+  <img src="{{ '/assets/images/parallel-flow-diagram.png' | relative_url }}" alt="Parallel Flow System Diagram">
+  <p><em>Figure 1: System diagram showing parallel flow configuration with control volume boundary (green dashed line). Both hot and cold streams enter from the left and exit on the right, flowing in the same direction.</em></p>
 </div>
+
+### Counter Flow Configuration
+
+<div class="diagram-container">
+  <img src="{{ '/assets/images/counter-flow-diagram.png' | relative_url }}" alt="Counter Flow System Diagram">
+  <p><em>Figure 2: System diagram showing counter flow configuration. Hot stream flows left to right while cold stream flows right to left, maximizing temperature differential throughout the heat exchanger.</em></p>
+</div>
+
+### Temperature Profiles
+
+<div class="diagram-container">
+  <img src="{{ '/assets/images/temperature-profiles.png' | relative_url }}" alt="Temperature Profiles">
+  <p><em>Figure 3: Temperature profiles along the heat exchanger length for both configurations. The yellow shaded area represents the driving temperature difference (ΔT) available for heat transfer. Note the larger and more uniform ΔT in counter flow configuration.</em></p>
+</div>
+
+---
+
+## 4. Thermodynamic Analysis
+
+### Assumptions
+
+1. Steady-state operation
+2. Negligible kinetic and potential energy changes
+3. Adiabatic outer walls (Q̇_loss ≈ 0)
+4. Incompressible flow with constant properties
+5. No work interactions
+
+### Mass Balance
+
+For steady flow:
+
+$$\dot{m}_{in} = \dot{m}_{out} \text{ (for each stream)}$$
+
+### Energy Balance
+
+First Law of Thermodynamics for the heat exchanger control volume:
+
+$$\dot{m}_h(h_1 - h_2) = \dot{m}_c(h_4 - h_3)$$
+
+For liquid water with constant $c_p \approx 4.18 \text{ kJ/(kg·K)}$:
+
+$$\dot{Q}_{hot} = \dot{m}_h \cdot c_p \cdot (T_1 - T_2)$$
+
+$$\dot{Q}_{cold} = \dot{m}_c \cdot c_p \cdot (T_4 - T_3)$$
+
+**Energy balance**: $\dot{Q}_{hot} = \dot{Q}_{cold}$
+
+---
+
+## 5. Quantitative Analysis
+
+### Heat Transfer Calculations
+
+#### Parallel Flow
+
+**Hot stream:**
+
+$$\dot{Q}_{hot} = \dot{m}_h \cdot 4.18 \cdot (45.0 - 22.9) = 92.38 \cdot \dot{m}_h \text{ kW}$$
+
+**Cold stream:**
+
+$$\dot{Q}_{cold} = \dot{m}_c \cdot 4.18 \cdot (18.6 - 7.0) = 48.49 \cdot \dot{m}_c \text{ kW}$$
+
+**Flow rate ratio from energy balance:**
+
+$$\frac{\dot{m}_c}{\dot{m}_h} = \frac{92.38}{48.49} = 1.905$$
+
+#### Counter Flow
+
+**Hot stream:**
+
+$$\dot{Q}_{hot} = \dot{m}_h \cdot 4.18 \cdot (45.0 - 23.7) = 89.03 \cdot \dot{m}_h \text{ kW}$$
+
+**Cold stream:**
+
+$$\dot{Q}_{cold} = \dot{m}_c \cdot 4.18 \cdot (28.2 - 11.4) = 70.22 \cdot \dot{m}_c \text{ kW}$$
+
+**Flow rate ratio:**
+
+$$\frac{\dot{m}_c}{\dot{m}_h} = \frac{89.03}{70.22} = 1.268$$
 
 ### Effectiveness Analysis
 
-The **heat exchanger effectiveness** (ε) represents the ratio of actual heat transfer to the maximum theoretically possible heat transfer:
+Heat exchanger effectiveness: $\varepsilon = \dot{Q}_{actual} / \dot{Q}_{max}$
 
-- **Counter flow**: ε = 63.4%
-- **Parallel flow**: ε = 58.2%
+**Parallel Flow:**
 
-The counter flow arrangement achieves **8.9% better effectiveness**, allowing more complete heat recovery from the hot stream.
+$$\dot{Q}_{max} = \dot{m}_h \cdot c_p \cdot (T_1 - T_3) = 158.84 \cdot \dot{m}_h \text{ kW}$$
 
-### Entropy Generation Analysis
+$$\varepsilon_{parallel} = \frac{92.38}{158.84} = 0.582 = 58.2\%$$
 
-From a second law perspective, entropy generation quantifies thermodynamic irreversibility:
+**Counter Flow:**
 
-- **Counter flow**: $\dot{S}_{gen}$ = 0.421 W/K
-- **Parallel flow**: $\dot{S}_{gen}$ = 0.687 W/K
+$$\dot{Q}_{max} = \dot{m}_h \cdot c_p \cdot (T_1 - T_3) = 140.45 \cdot \dot{m}_h \text{ kW}$$
 
-Counter flow demonstrates **39% lower entropy generation**, indicating more reversible (efficient) heat transfer processes. This reduction in irreversibility directly correlates with improved exergetic efficiency.
+$$\varepsilon_{counter} = \frac{89.03}{140.45} = 0.634 = 63.4\%$$
 
----
+### Performance Comparison
 
-## Engineering Insights
+| Configuration | Hot ΔT (°C) | Cold ΔT (°C) | Effectiveness | Flow Ratio |
+|---------------|-------------|--------------|---------------|------------|
+| Parallel Flow | 22.1 | 11.6 | 58.2% | 1.905 |
+| Counter Flow | 21.3 | 16.8 | 63.4% | 1.268 |
+| **Improvement** | -3.6% | **+45%** | **+8.9%** | - |
 
-### Why Counter Flow Performs Better
-
-1. **Sustained Temperature Gradient**: Counter flow maintains a more uniform ΔT along the entire exchanger length, maximizing the driving force for heat transfer
-2. **Higher Exit Temperatures**: The cold fluid can theoretically be heated above the hot fluid exit temperature (impossible in parallel flow)
-3. **Better Approach Temperature**: Counter flow can achieve smaller approach temperatures between outlet streams
-4. **Reduced Irreversibility**: Lower entropy generation indicates more thermodynamically efficient operation
-
-### Practical Implications
-
-These results have significant implications for industrial applications:
-
-- **Energy Recovery**: Counter flow exchangers recover more waste heat, improving overall system efficiency
-- **Compact Design**: Higher effectiveness allows for smaller heat exchanger sizes for the same duty
-- **Operating Cost**: Better performance translates to lower energy consumption and reduced operating costs
-- **Environmental Impact**: Improved efficiency reduces fuel consumption and associated emissions
+<div style="background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 1em; margin: 1.5em 0;">
+  <strong>Key Result:</strong> Counter flow achieves 45% greater cold stream temperature rise and 8.9% higher effectiveness.
+</div>
 
 ---
 
-## Methodology
+## 6. Entropy Analysis
 
-### Experimental Setup
-- Controlled inlet temperatures using precision thermostatic baths
-- Measured outlet temperatures using calibrated RTD sensors (±0.1°C accuracy)
-- Maintained steady-state operation for 15 minutes before data collection
-- Repeated measurements three times to ensure reproducibility
+For steady-state operation with $\Delta s = c_p \cdot \ln(T_{out}/T_{in})$:
 
-### Data Analysis
-- Applied energy balance equations to determine flow rate ratios
-- Calculated effectiveness using ε-NTU method
-- Computed entropy generation rates assuming water as working fluid
-- Created temperature profile visualizations using MATLAB
+### Parallel Flow
 
-### Assumptions
-- Steady-state operation
-- Negligible kinetic and potential energy changes
-- Adiabatic outer walls (no heat loss to surroundings)
-- Constant specific heat ($c_p$ = 4.18 kJ/kg·K for water)
-- Incompressible flow
+Converting to Kelvin: $T_1=318.15$ K, $T_2=296.05$ K, $T_3=280.15$ K, $T_4=291.75$ K
 
----
+$$\dot{S}_{gen} = \dot{m}_h \cdot c_p \cdot \ln(T_2/T_1) + \dot{m}_c \cdot c_p \cdot \ln(T_4/T_3)$$
 
-## Conclusions
+$$\dot{S}_{gen} = \dot{m}_h \cdot 4.18 \cdot \ln(0.9306) + 1.905 \cdot \dot{m}_h \cdot 4.18 \cdot \ln(1.0414)$$
 
-This comparative analysis definitively demonstrates the superior thermodynamic performance of counter flow heat exchangers:
+$$\dot{S}_{gen} = 0.023 \cdot \dot{m}_h \text{ kW/K}$$
 
-1. **Cold stream heating improved by 45%** (16.8°C vs 11.6°C temperature rise)
-2. **Effectiveness increased by 8.9%** (63.4% vs 58.2%)
-3. **Entropy generation reduced by 39%** (0.421 vs 0.687 W/K)
-4. **More uniform temperature gradients** enable better heat transfer throughout the exchanger
+### Counter Flow
 
-These quantitative results validate the theoretical predictions and provide strong justification for preferring counter flow configurations in industrial heat recovery applications where maximum efficiency is desired.
+Converting to Kelvin: $T_1=318.15$ K, $T_2=296.85$ K, $T_3=284.55$ K, $T_4=301.35$ K
 
-The experimental data, coupled with first and second law analyses, provides comprehensive insight into heat exchanger performance and demonstrates practical application of thermodynamic principles to real engineering systems.
+$$\dot{S}_{gen} = \dot{m}_h \cdot c_p \cdot \ln(T_2/T_1) + \dot{m}_c \cdot c_p \cdot \ln(T_4/T_3)$$
+
+$$\dot{S}_{gen} = \dot{m}_h \cdot 4.18 \cdot \ln(0.9330) + 1.268 \cdot \dot{m}_h \cdot 4.18 \cdot \ln(1.0590)$$
+
+$$\dot{S}_{gen} = 0.014 \cdot \dot{m}_h \text{ kW/K}$$
+
+**Result**: Counter flow generates **39% less entropy** (0.014 vs 0.023 kW/K), indicating superior thermodynamic efficiency.
 
 ---
 
-## Future Work
+## 7. Design Change Analysis
 
-Potential extensions of this analysis include:
-- Investigating the effect of varying flow rate ratios
-- Analyzing pressure drop characteristics for both configurations
-- Studying fouling effects on long-term performance
-- Optimization of heat exchanger geometry for specific applications
-- Economic analysis comparing capital and operating costs
+### Configuration: Parallel → Counter Flow
+
+**Performance improvements:**
+- Cold outlet temperature: +9.6°C (18.6°C → 28.2°C)
+- Effectiveness: +8.9% (58.2% → 63.4%)
+- Entropy generation: -39%
+- Temperature driving force: More uniform along exchanger length
+
+**Why counter flow is superior:**
+
+Counter flow maintains a larger, more uniform temperature difference between hot and cold streams throughout the exchanger. In parallel flow, both streams approach the same temperature at the outlet, reducing the driving force. In counter flow, the cold outlet can approach the hot inlet temperature, enabling greater heat transfer.
+
+### Other Design Considerations
+
+**Increasing hot reservoir temperature** ($T_1$: 45°C → 60°C):
+- Increases heat transfer capacity
+- Raises cold outlet temperature
+- Larger temperature driving force throughout
+
+**Adjusting flow rates** (increasing $\dot{m}_h$):
+- From energy balance: $\dot{Q} = \dot{m}_h \cdot c_p \cdot (T_1-T_2) = \dot{m}_c \cdot c_p \cdot (T_4-T_3)$
+- Higher hot flow → smaller hot ΔT → hotter outlet
+- Trade-off between flow rate and temperature change
+
+**Restricting cold flow** (decreasing $\dot{m}_c$):
+- Requires larger cold ΔT to maintain energy balance
+- Risk of excessive outlet temperature (boiling)
+- Critical consideration in cooling applications (automotive, reactors)
+
+**Insulation effects:**
+- Reduces parasitic heat loss to environment
+- Improves effectiveness
+- Essential for high-temperature industrial applications
+
+---
+
+## 8. Conclusions
+
+### Key Findings
+
+1. **Counter flow demonstrates superior performance:**
+   - 45% greater cold stream temperature rise
+   - 8.9% higher effectiveness
+   - 39% less entropy generation
+   - More uniform temperature driving force
+
+2. **Experimental validation:**
+   - Energy balance confirmed: $\dot{Q}_{hot} = \dot{Q}_{cold}$
+   - Flow rate ratios: $\dot{m}_c/\dot{m}_h = 1.905$ (parallel), $1.268$ (counter)
+   - Assumptions (adiabatic, steady-state) reasonably satisfied
+
+3. **Design insights:**
+   - Configuration choice significantly impacts performance
+   - Flow rate adjustments enable performance tuning
+   - Insulation reduces efficiency losses
+
+### Engineering Significance
+
+Counter flow heat exchangers dominate industrial applications requiring maximum heat transfer efficiency. This configuration enables:
+- Higher outlet temperatures in the heated stream
+- Better energy recovery in power generation and chemical processing
+- Reduced operating costs through improved efficiency
+- Optimal performance in space/weight-constrained applications
+
+**Fundamental lesson**: Flow configuration is a critical design choice with measurable performance impacts, not merely a plumbing detail.
+
+---
+
+*ENGRD 2210 Portfolio - Cornell University, Fall 2025*
