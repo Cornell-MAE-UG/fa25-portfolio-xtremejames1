@@ -3,6 +3,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.gem
 
 # Node
 node_modules/
@@ -32,3 +33,5 @@ Gemfile.lock
 
 # VS Code specific settings
 .vscode/
+
+shell.nix
