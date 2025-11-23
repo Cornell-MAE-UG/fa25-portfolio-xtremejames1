@@ -56,7 +56,10 @@ The heat exchanger studied consists of two independent flow circuits (hot and co
 | Cold outlet (T₄) | 28.2°C |
 | Flow condition | ṁ_cold > ṁ_hot |
 
-<img src="{{ '/assets/images/setup.jpg' | relative url }}" alt="Lab setup image">
+<div class="diagram-container">
+  <img src="{{ '/assets/images/setup.jpg' | relative url }}" alt="Lab setup image">
+  <p><em>Figure 1: Image of lab setup. The heat exchanger is pictured in the center, with the outlets and inlets configured in parallel flow.</em></p>
+</div>
 ---
 
 ## 3. System Diagrams
@@ -65,21 +68,21 @@ The heat exchanger studied consists of two independent flow circuits (hot and co
 
 <div class="diagram-container">
   <img src="{{ '/assets/images/parallel-flow-diagram.png' | relative_url }}" alt="Parallel Flow System Diagram">
-  <p><em>Figure 1: System diagram showing parallel flow configuration with control volume boundary (green dashed line). Both hot and cold streams enter from the left and exit on the right, flowing in the same direction.</em></p>
+  <p><em>Figure 2: System diagram showing parallel flow configuration with control volume boundary (green dashed line). Both hot and cold streams enter from the left and exit on the right, flowing in the same direction.</em></p>
 </div>
 
 ### Counter Flow Configuration
 
 <div class="diagram-container">
   <img src="{{ '/assets/images/counter-flow-diagram.png' | relative_url }}" alt="Counter Flow System Diagram">
-  <p><em>Figure 2: System diagram showing counter flow configuration. Hot stream flows left to right while cold stream flows right to left, maximizing temperature differential throughout the heat exchanger.</em></p>
+  <p><em>Figure 3: System diagram showing counter flow configuration. Hot stream flows left to right while cold stream flows right to left, maximizing temperature differential throughout the heat exchanger.</em></p>
 </div>
 
 ### Temperature Profiles
 
 <div class="diagram-container">
   <img src="{{ '/assets/images/temperature-profiles.png' | relative_url }}" alt="Temperature Profiles">
-  <p><em>Figure 3: Temperature profiles along the heat exchanger length for both configurations. The yellow shaded area represents the driving temperature difference (ΔT) available for heat transfer. Note the larger and more uniform ΔT in counter flow configuration.</em></p>
+  <p><em>Figure 4: Temperature profiles along the heat exchanger length for both configurations. The yellow shaded area represents the driving temperature difference (ΔT) available for heat transfer. Note the larger and more uniform ΔT in counter flow configuration.</em></p>
 </div>
 
 ---
