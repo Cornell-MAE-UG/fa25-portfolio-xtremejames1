@@ -44,7 +44,7 @@ The heat exchanger studied consists of two independent flow circuits (hot and co
 | Hot outlet (T₂) | 22.9°C |
 | Cold inlet (T₃) | 7.0°C |
 | Cold outlet (T₄) | 18.6°C |
-| Flow condition | ṁ_cold > ṁ_hot |
+| Flow condition | $ṁ_{cold} > ṁ_{hot}$ |
 
 #### Counter Flow Configuration
 
@@ -54,12 +54,13 @@ The heat exchanger studied consists of two independent flow circuits (hot and co
 | Hot outlet (T₂) | 23.7°C |
 | Cold inlet (T₃) | 11.4°C |
 | Cold outlet (T₄) | 28.2°C |
-| Flow condition | ṁ_cold > ṁ_hot |
+| Flow condition | $ṁ_{cold} > ṁ_{hot}$ |
 
 <div class="diagram-container">
-  <img src="{{ '/assets/images/setup.jpg' | relative url }}" alt="Lab setup image">
+  <img src="{{ '/assets/images/setup.jpg' | relative_url }}" alt="Lab setup image">
   <p><em>Figure 1: Image of lab setup. The heat exchanger is pictured in the center, with the outlets and inlets configured in parallel flow.</em></p>
 </div>
+
 ---
 
 ## 3. System Diagrams
