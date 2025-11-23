@@ -3,7 +3,7 @@ layout: project
 title: Heat Exchanger Performance Analysis
 description: Comparative analysis of parallel and counter flow heat exchangers
 technologies: [Thermodynamics, Heat Transfer, MATLAB, Data Analysis]
-image: /assets/images/temperature-profiles.png
+image: /assets/images/setup.jpg
 ---
 
 # Heat Exchanger Performance Analysis: Parallel vs Counter Flow
@@ -56,6 +56,7 @@ The heat exchanger studied consists of two independent flow circuits (hot and co
 | Cold outlet (T₄) | 28.2°C |
 | Flow condition | ṁ_cold > ṁ_hot |
 
+<img src="{{ '/assets/images/setup.jpg' | relative url }}" alt="Lab setup image">
 ---
 
 ## 3. System Diagrams
