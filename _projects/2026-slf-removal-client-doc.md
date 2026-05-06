@@ -26,6 +26,12 @@ image: /assets/images/setup.jpg
     - [Assembly Instructions](#assembly-instructions)
     - [Design Test](#design-test)
     - [Success Criteria](#success-criteria)
+- [Client Report](#client-report)
+  - [Introduction](#introduction)
+  - [Final Prototype and Application](#final-prototype-and-application)
+  - [Testing and Results](#testing-and-results)
+  - [Conclusions and Recommendations](#conclusions-and-recommendations)
+  - [Bill of Materials](#bill-of-materials)
 
 ## Client Pitch {#client-pitch}
 
@@ -153,6 +159,128 @@ Poured water into the hose of the prototype several times. Placed structure abov
 ## References
 
 [1] <https://pmc.ncbi.nlm.nih.gov/articles/PMC11285766>
+
+---
+
+# Client Report {#client-report}
+
+**Team W4 "The Entomophiles":** Alex Song, Elaine Wang, Badia Syed, Adam Sayah, James Xiao
+
+*MAE 2250 — May 2026*
+
+## Introduction {#introduction}
+
+Spotted lanternflies (SLF) infest grapevines, contaminating harvests and damaging vineyards that are critical to local economies in regions such as New York. This work targets the specific, high-impact sub-problem of removal of SLF immediately prior to harvest, when insects attached to vines are likely to be collected with grape clusters and directly contaminate the product. This focus enables large short-term gains without requiring full population control.
+
+At harvest, grapes are extremely delicate and easily damaged or dislodged, while SLF exhibit strong adhesion to surfaces, requiring substantial but carefully controlled force for removal. With chemical and biological methods still uncertain and difficult to scale, a kinetic alternative is necessary. The proposed solution — **GUARD** (Grapevine Unit for Arthropod Removal and Defense) — integrates directly with existing harvesting equipment, avoids disruption to workflows or costly vineyard-wide deployment, scales easily, and targets the SLF population most immediately affecting yield.
+
+## Final Prototype and Application {#final-prototype-and-application}
+
+A front-mounted harvester spray attachment was built to wash spotted lanternflies off grape vines immediately before harvest. Water is stored in a refillable tank mounted above the system, then flows through a controllable valve into a PVC pipe network. The pipes have evenly spaced holes arranged in a staggered (checkerboard) pattern to spread water uniformly while minimizing usage. The spray system is supported by a lightweight aluminum frame with rigid 3D-printed joints.
+
+The device is designed to attach to the front of the harvester, extending above the vines below. Water showers onto the vines, penetrating the vines' foliage and saturating any SLF that may be feeding on the plant, encouraging them to jump off or causing their wings to adsorb water so they fall to the ground.
+
+**How it is used:**
+- Requires a reliable water source (vineyard irrigation system or a refillable tank) and an attachment point to the front of the harvester.
+- The controllable valve accommodates the needs of different vineyards without wasting resources or causing unnecessary damage.
+- Its minimal design lends itself to infrequent and inexpensive maintenance.
+- The device is singular in function and does not require an extensive infrastructure of similar devices.
+- For the client: this is an attachment for harvesters to immediately increase harvest yield by removing SLF from the vines directly before the harvester passes through.
+
+![Harvester mockup drawing (left) and final prototype (right)](/assets/images/harvester-mockup-prototype.jpg)
+
+*Figure: Harvester mockup drawing (left) and final prototype (right)*
+
+## Testing and Results {#testing-and-results}
+
+### Test 1 — Flow Rate and Leak Integrity
+
+| | |
+|---|---|
+| **Objective** | Evaluate integrity and efficacy of water-carrying components |
+| **Success Criteria** | Achieve steady flow rate of 15 mL/s with less than 5% water volume lost to leakage |
+| **Observations** | GUARD expended 1000 mL in 58.1 sec (≈ 17 mL/s); minimal dripping leakage observed |
+| **Conclusion** | Water flows well. Existing connections are satisfactory. System is expected to sustain fluid flow during normal harvesting operations. |
+
+### Test 2 — Surface Area Saturation
+
+| | |
+|---|---|
+| **Objective** | Evaluate whether "checkerboard" hole/pipe distribution enables full area saturation |
+| **Success Criteria** | Achieve saturation of 95% of area within cage |
+| **Observations** | Absorbent cloth placed below was fully soaked within seconds |
+| **Conclusion** | 100% area saturation was achieved. Future iterations may use nozzles to improve coverage and reduce direct-drip damage to plants. |
+
+### Test 3 — Structural Integrity (Frame Deflection)
+
+| | |
+|---|---|
+| **Objective** | Evaluate structural integrity of frame |
+| **Success Criteria** | Less than 2 mm of deflection when supported from one end |
+| **Observations** | Frame deflected 0.6 mm under a 6 kg load |
+| **Conclusion** | The metal frame deflects within acceptable tolerances and is stable. The design can be scaled up while remaining relatively lightweight and rigid. |
+
+### Scale Calculations
+
+For a typical harvester with an opening width of less than 1 m, a similarly laid-out system at full scale would have a flow rate approximately 3.3× the current prototype, yielding ~56.1 mL/s. With a 60-gallon tank, this provides a runtime of about 1.12 hours. With improved nozzle technology (approximately 9× flow efficiency), runtime could reach ~10 hours — sufficient for continuous operation during a full harvest day.
+
+## Conclusions and Recommendations {#conclusions-and-recommendations}
+
+Our results are overall **inconclusive** due to time and resource limitations. We were unable to implement a positive-pressure system, which is necessary to actively spray water through nozzles; using gravity alone simply redirects the flow of water. While our saturation test was successful, it only measured saturation at ground level and is not the best representation of plant-level saturation.
+
+**Recommendations for further development:**
+1. Implement **directional nozzles in a positive-pressure system** to spray water more efficiently onto the vines and insects.
+2. Supplement the spray with **high-pressure air blasts** directed at SLF, to knock off insects that do not fall from water alone.
+3. Conduct testing with real or simulated SLF on actual grapevines to validate removal efficacy.
+4. Scale the design to match full harvester dimensions (opening width ~1 m) and validate flow rates and structural integrity at scale.
+
+## Bill of Materials {#bill-of-materials}
+
+### Final Prototype Component List
+
+| Component | Quantity | Additional Details | Cost |
+|---|---|---|---|
+| Aluminum Rods | 140″ | Eight 12″ pieces, four 11″ pieces | $26.06 |
+| Plastic Jug | 1 | — | $5.15 |
+| PVC Tubing for Air and Water | 3′ | — | $2.07 |
+| Standard-Wall Unthreaded Rigid PVC Pipe | 60 ¾″ | Four 13″ pieces, five 1¾″ pieces | $5.92 |
+| PVC Tee Connector | 4 | — | $3.08 |
+| Zinc-Plated Steel Barbed Hose Fitting | 2 | — | $7.72 |
+| PVC Pipe Cap | 5 | — | $3.00 |
+| Plastic Threaded On/Off Valve | 1 | — | $5.73 |
+| Clear Easy-to-Form PETG Sheet | 2 | — | $6.16 |
+| Machined Metal Nut (1-12 tpi) | 1 | — | $1.00 |
+| 1″ Schedule 40 PVC (Lab Scrap) | 8″ | Two 4″ pieces | $0.00 |
+| Corner Joints | 12 | Designed in Fusion 360, 3D printed | $11.94 |
+| PVC Clips | 3 | Designed in Fusion 360, 3D printed | $0.91 |
+| **TOTAL** | | | **$78.74** |
+
+### Full Bill of Materials (McMaster-Carr)
+
+| Component | Qty | Specs | McMaster Code | Cost |
+|---|---|---|---|---|
+| Aluminum Rods | 4 | 3′ each, ½″ dia. | 8974K28 | $26.80 |
+| White HDPE Plastic Jug | 1 | 1 gallon | 46125T7 | $5.15 |
+| Stainless Steel Set Screw | 1 | Pack of 25, M4 × 0.7 mm, 5 mm | 91217A110 | $2.53 |
+| PVC Tubing | 1 | ½″ ID, 25 ft | 5233K66 | $17.25 |
+| Rigid PVC Pipe | 3 | ¾ Pipe Size, 5′ each | 48925K92 | $17.55 |
+| PVC Tee Connector | 10 | ¾ Size Socket, White | 4880K42 | $7.70 |
+| Barbed Hose Fitting | 2 | ½″ Hose ID, ¾ NPT Male | 5350K43 | $7.72 |
+| PVC Pipe Cap | 12 | ¾ Pipe Size Socket, White | 4880K52 | $7.20 |
+| Plastic Threaded On/Off Valve | 1 | ¾ NPT Male × ¾ GHT Male | 9848K46 | $5.73 |
+| Heat-Set Inserts for Plastic | 1 | Brass M4, 6.4 mm | 94459A160 | $11.73 |
+| PETG Sheet | 2 | 12″ × 12″ × 0.06″ | 85815K11 | $6.16 |
+| Plant Saucer | 1 | 14″ × 2 Pack | Amazon | $19.99 |
+| Machined Metal Nut (1-12 tpi) | 1 | 2″ Round Stock, 200 g | N/A | $1.00 |
+| Machine Shop Time | 6 hrs | — | N/A | $30.00 |
+| PVC Scrap (Lab) | 1 | 1″ sch. 40, 8″ total | N/A | $0.00 |
+| Corner Joints | 12 | Fusion 360, 3D printed | N/A | $11.94 |
+| PVC Clips | 3 | Fusion 360, 3D printed | N/A | $0.91 |
+| **TOTAL** | | | | **$155.41** |
+
+---
+
+*MAE 2250 — Cornell University, Spring 2026*
 
 [image1]: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnAAAAFhCAYAAADwcZcAAACAAElEQVR4Xuyd
 
