@@ -243,7 +243,7 @@ Our results are overall **inconclusive** due to time and resource limitations. W
 | Aluminum Rods | 140″ | Eight 12″ pieces, four 11″ pieces | $26.06 |
 | Plastic Jug | 1 | — | $5.15 |
 | PVC Tubing for Air and Water | 3′ | — | $2.07 |
-| Standard-Wall Unthreaded Rigid PVC Pipe | 60 ¾″ | Four 12″ pieces, five 7/4″ pieces | $5.92 |
+| Standard-Wall Unthreaded Rigid PVC Pipe | 60 ¾″ | Four 13″ pieces, five 1¾″ pieces | $5.92 |
 | PVC Tee Connector | 4 | — | $3.08 |
 | Zinc-Plated Steel Barbed Hose Fitting | 2 | — | $7.72 |
 | PVC Pipe Cap | 5 | — | $3.00 |
